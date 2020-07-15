@@ -1,0 +1,100 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  @include width-height($card-width, 402px);
+  max-width: 200px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #f3f3f3;
+  padding: 0 14px;
+
+  &__image-container {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    width: 160px;
+    height: 209px;
+  }
+
+  &__img {
+    margin: 30px 0;
+    @include width-height(160px, 134px);
+    outline: 3px solid transparent;
+    transition: transform 0.9s;
+  }
+
+  &__img:hover {
+    box-sizing: content-box;
+    transform: scale(1.2);
+    outline-color: #f3f3f3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  &__title {
+    @include font-line(12px, 15px);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  &__product-code {
+    @include font-line(11px, 13px);
+    margin-bottom: 14px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__price-amount {
+    @include font-line(16px, 19px);
+    font-weight: bold;
+  }
+
+  &__buy-link {
+    @include width-height(170px, 40px);
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    @include font-line(14px, 39px);
+    font-weight: bold;
+    color: #fff;
+    background-color: $color-moyo;
+    border-radius: 5px;
+    border: 1px solid $color-moyo;
+    transition: background-color 0.4s, color 0.3s;
+  }
+
+  &__buy-link:hover {
+    background-color: #fff;
+    color: $color-moyo;
+  }
+}
+
+.rating {
+  margin: 0 0 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15px;
+
+  &__stars {
+    display: flex;
+  }
+
+  &__star {
+    background: url(/images/star.svg) no-repeat center;
+    @include width-height(15px, 15px);
+    margin-right: 4px;
+  }
+
+  @for $i from 1 through 5 {
+    &__stars--#{$i} &__star:nth-child(-n+#{$i}) {
+      background-image: url(/images/star-active.svg);
+    }
+  }
+}
