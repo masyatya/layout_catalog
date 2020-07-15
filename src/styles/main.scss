@@ -1,6 +1,4 @@
-$color-moyo: #00acdc;
-$card-width: 200px;
-$gap-row: 48px;
+@import "vars";
 
 @mixin font-line($size, $l-height) {
   font-size: $size;
@@ -30,7 +28,7 @@ h3 {
 .container__card {
   margin: 50px auto;
   display: grid;
-  gap: 50px 48px;
+  gap: 50px $gap-row;
   grid-template-columns: repeat(auto-fit, $card-width);
   max-width: 4 * $card-width + 3 * $gap-row;
 }
