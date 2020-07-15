@@ -1,5 +1,6 @@
 $color-moyo: #00acdc;
 $card-width: 200px;
+$gap-row: 48px;
 
 @mixin font-line($size, $l-height) {
   font-size: $size;
@@ -26,13 +27,12 @@ h3 {
   margin: 0;
 }
 
-.main {
+.container__card {
   margin: 50px auto;
-  max-width: 1200px;
-  display: flex;
-  justify-content: center;
-  flex-basis: 25%;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 50px 48px;
+  grid-template-columns: repeat(auto-fit, $card-width);
+  max-width: 4 * $card-width + 3 * $gap-row;
 }
 
 @import "header.scss";
