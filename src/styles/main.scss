@@ -28,7 +28,7 @@ h3 {
 .container__card {
   margin: 50px auto;
   display: grid;
-  gap: 50px $gap-row;
+  gap: $gap-column $gap-row;
   grid-template-columns: repeat(auto-fit, $card-width);
   max-width: 4 * $card-width + 3 * $gap-row;
 }
